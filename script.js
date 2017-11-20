@@ -13,9 +13,10 @@
         };
 
         $http
-            .get('https://api.github.com/users/robconery')
+            .get('https://api.github.com/users/angular')
             .then(onUserComplete, onError);
-        $scope.message = 'Hello, Angular!';
+        $scope.username = "angular";
+        $scope.message = "GitHub viewer";
     }
 
     myApp.controller("MainController", ["$scope", "$http", MainController]);
