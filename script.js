@@ -18,6 +18,13 @@
             $scope.error = 'Could not fetch the data.';
         };
 
+        var decrementCountdown = function() {
+            $scope.countdown -= 1;
+            if ($scope.countdown < 1) {
+                $scope.search($scope.username);
+            }
+        }
+
         $scope.search = function(username) {
             $http
                 .get('https://api.github.com/users/' + username)
@@ -26,6 +33,7 @@
         $scope.username = 'angular';
         $scope.message = 'GitHub viewer';
         $scope.repoSortOrder = '-stargazers_count';
+        $scope.countdown = 5;
     };
 
     myApp.controller('MainController', ['$scope', '$http', MainController]);
