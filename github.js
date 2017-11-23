@@ -21,7 +21,7 @@
         };
     };
     // Getting reference to exisiting module
-    var module = angular.module("githubViewer");
+    var module = angular.module("myApp");
 
     // Using factory method by passing name of service + parameters that passes function
     module.factory("github", github);
