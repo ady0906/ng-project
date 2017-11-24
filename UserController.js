@@ -10,16 +10,15 @@
 
         var onRepos = function(data) {
             $scope.repos = data;
-            $location.hash('userDetails');
-            $anchorScroll();
         };
 
         var onError = function(reason) {
             $scope.error = 'Could not fetch the data.';
         };
 
-        $scope.username = 'angular';
+        $scope.username = $routeParams.username;
         $scope.repoSortOrder = '-stargazers_count';
+        github.getUser($scope.username).then(onUserComplete, onError);
     };
 
     myApp.controller('UserController', UserController);

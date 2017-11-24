@@ -28,7 +28,7 @@
                 $interval.cancel(countdownInterval);
                 $scope.countdown = null;
             }
-            // Write code to direct to right route
+            $location.path("/user/" + username);
         };
         $scope.username = 'angular';
         $scope.countdown = 5;
