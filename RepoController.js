@@ -2,7 +2,7 @@
 
     var myApp = angular.module('myApp');
 
-    var RepoController = function() {
+    var RepoController = function($scope, $routeParams) {
 
     };
 
