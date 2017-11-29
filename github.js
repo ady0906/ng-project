@@ -24,9 +24,19 @@
                 });
         }
 
+        var getContributors = function(user, repo) {
+            return $http
+                .get('https://api.github.com/repos/' + user + '/' + repo + '/contributors')
+                .then(function(response) {
+                    return response.data;
+                });
+        }
+
         return {
             getUser: getUser,
-            getRepos: getRepos
+            getRepos: getRepos,
+            getRepo: getRepo,
+            getContributors: getContributors
         };
     };
     // Getting reference to exisiting module
