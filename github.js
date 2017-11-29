@@ -15,6 +15,15 @@
                     return response.data;
                 });
         }
+
+        var getRepo = function(user, repo) {
+            return $http
+                .get('https://api.github.com/repos/' + user + '/' + repo)
+                .then(function(response) {
+                    return response.data;
+                });
+        }
+
         return {
             getUser: getUser,
             getRepos: getRepos
