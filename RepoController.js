@@ -5,7 +5,7 @@
     var RepoController = function($scope, $routeParams, $log, github) {
         onRepoComplete = function(data) {
             console.log(data);
-            // $scope.repo = data;
+            $scope.repo = data;
             // github.getContributors($scope.)
         }
 
