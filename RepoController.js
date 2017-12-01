@@ -25,8 +25,6 @@
         $scope.username = $routeParams.username;
         $scope.reponame = $routeParams.reponame;
         github.getRepo($scope.username, $scope.reponame).then(onRepoComplete, onError);
-        // $scope.name = 'zboob';
-        // $scope.$log = 'Repo de ouf';
     };
 
     myApp.controller('RepoController', RepoController);
