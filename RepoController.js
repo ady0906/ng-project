@@ -9,8 +9,8 @@
         };
 
         var onContributors = function(data) {
+            console.log(data);
             $scope.contributors = data;
-            console.log($scope.contributors);
         };
 
         var onError = function(reason) {

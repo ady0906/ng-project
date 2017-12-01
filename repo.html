@@ -5,7 +5,9 @@
 </div>
 
 <ul>
-    <li ng-repeat>
-
+    <li ng-repeat="contributor in contributors">
+        <ul>
+            {{ contributor.login }}
+        </ul>
     </li>
 </ul>
