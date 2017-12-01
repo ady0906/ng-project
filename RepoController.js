@@ -4,19 +4,14 @@
 
     var RepoController = function($scope, $routeParams, $log, github) {
         onRepoComplete = function(data) {
-            console.log(data);
             $scope.repo = data;
-            // github.getContributors($scope.)
-        }
+            github.getContributors($scope.username, $scope.reponame).then(onContributors, onError);
+        };
 
-        // var onUserComplete = function(data) {
-        //     $scope.user = data;
-        //     github.getRepos($scope.user).then(onRepos, onError);
-        // };
-        //
-        // var onRepos = function(data) {
-        //     $scope.repos = data;
-        // };
+        var onContributors = function(data) {
+            $scope.contributors = data;
+            console.log($scope.contributors);
+        };
 
         var onError = function(reason) {
             $scope.error = 'Could not fetch the data.';
