@@ -1,11 +1,12 @@
 (function() {
-
     var myApp = angular.module('myApp');
 
     var RepoController = function($scope, $routeParams, github) {
         onRepoComplete = function(data) {
             $scope.repo = data;
-            github.getContributors($scope.username, $scope.reponame).then(onContributors, onError);
+            github
+                .getContributors($scope.username, $scope.reponame)
+                .then(onContributors, onError);
         };
 
         var onContributors = function(data) {
@@ -18,7 +19,9 @@
 
         $scope.username = $routeParams.username;
         $scope.reponame = $routeParams.reponame;
-        github.getRepo($scope.username, $scope.reponame).then(onRepoComplete, onError);
+        github
+            .getRepo($scope.username, $scope.reponame)
+            .then(onRepoComplete, onError);
     };
 
     myApp.controller('RepoController', RepoController);
