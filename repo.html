@@ -1,14 +1,18 @@
+<h2>{{reponame}}</h2>
+
 <div>
-    <h2>{{reponame}}</h2>
-    {{error}}
     Issues: {{repo.open_issues_count}}
 </div>
 
-<ul>
-    <li ng-repeat="contributor in contributors">
-        <ul>
-            <img class='contributorPic' ng-src="{{contributor.avatar_url}}" title="{{contributor.login}}" />
-            {{contributor.login}}
-        </ul>
-    </li>
-</ul>
+<div>
+    <ul>
+        <li ng-repeat="contributor in contributors">
+            <ul>
+                <img class='contributorPic' ng-src="{{contributor.avatar_url}}" title="{{contributor.login}}" />
+                {{contributor.login}}
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<a href="#/main">Back to search</a>
