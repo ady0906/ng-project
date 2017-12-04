@@ -2,14 +2,13 @@
 
     var myApp = angular.module('myApp');
 
-    var RepoController = function($scope, $routeParams, $log, github) {
+    var RepoController = function($scope, $routeParams, github) {
         onRepoComplete = function(data) {
             $scope.repo = data;
             github.getContributors($scope.username, $scope.reponame).then(onContributors, onError);
         };
 
         var onContributors = function(data) {
-            console.log(data);
             $scope.contributors = data;
         };
 
